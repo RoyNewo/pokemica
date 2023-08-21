@@ -1,0 +1,547 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Singletones/TwitchChat.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Pokemons/1.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Fonts/Pokemon Solid.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Singletones/settings.gd" type="Script" id=5]
+[ext_resource path="res://Singletones/settings_return.gd" type="Script" id=6]
+[ext_resource path="res://Singletones/Pokemica.gd" type="Script" id=7]
+[ext_resource path="res://Assets/UI/Background.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Icons/1337506_game_go_options_play_pokemon_icon.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Icons/pngwing.com.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/pokemon theme.tres" type="Theme" id=11]
+
+[sub_resource type="DynamicFont" id=12]
+size = 35
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/Fonts/Pokemon Solid.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 20
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 20
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 20
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.619608, 0.184314, 0.184314, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 25
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 25
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=11]
+outline_size = 2
+outline_color = Color( 0.254902, 0.360784, 0.701961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TwitchChat" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="TwitchChat"]
+use_threads = true
+
+[node name="Juego" type="Node" parent="."]
+
+[node name="Principal" type="TextureRect" parent="Juego"]
+margin_right = 800.0
+margin_bottom = 800.0
+texture = ExtResource( 8 )
+
+[node name="shameOn" type="Label" parent="Juego/Principal"]
+margin_left = 20.0
+margin_top = 700.0
+margin_right = 680.0
+margin_bottom = 780.0
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 12 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="sprite_actual_pokemon" type="Sprite" parent="Juego/Principal"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 384, 538 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="Info" type="HBoxContainer" parent="Juego/Principal"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 780.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+
+[node name="last" type="HBoxContainer" parent="Juego/Principal/Info"]
+margin_right = 378.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+
+[node name="last_pokemon_box" type="VBoxContainer" parent="Juego/Principal/Info/last"]
+margin_right = 187.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+
+[node name="sprite_last_pokemon" type="Sprite" parent="Juego/Principal/Info/last/last_pokemon_box"]
+visible = false
+position = Vector2( 100, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="last_pokemon_data" type="VBoxContainer" parent="Juego/Principal/Info/last"]
+margin_left = 191.0
+margin_right = 378.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+
+[node name="last_pokemon" type="Label" parent="Juego/Principal/Info/last/last_pokemon_data"]
+visible = false
+margin_top = 86.0
+margin_right = 187.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "#1 Bulbasaur"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="last_user" type="Label" parent="Juego/Principal/Info/last/last_pokemon_data"]
+visible = false
+margin_top = 137.0
+margin_right = 187.0
+margin_bottom = 165.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "RoyNewo"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="highScore" type="HBoxContainer" parent="Juego/Principal/Info"]
+margin_left = 382.0
+margin_right = 760.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+
+[node name="highScore_pokemon_box" type="VBoxContainer" parent="Juego/Principal/Info/highScore"]
+margin_right = 187.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+
+[node name="sprite_highScore" type="Sprite" parent="Juego/Principal/Info/highScore/highScore_pokemon_box"]
+visible = false
+position = Vector2( 98, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="highScore_pokemon_data" type="VBoxContainer" parent="Juego/Principal/Info/highScore"]
+margin_left = 191.0
+margin_right = 378.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+
+[node name="highscore_last_pokemon" type="Label" parent="Juego/Principal/Info/highScore/highScore_pokemon_data"]
+visible = false
+margin_top = 82.0
+margin_right = 197.0
+margin_bottom = 117.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "#1 Bulbasaur"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="highscore_last_user" type="Label" parent="Juego/Principal/Info/highScore/highScore_pokemon_data"]
+visible = false
+margin_top = 133.0
+margin_right = 197.0
+margin_bottom = 168.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "RoyNewo"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="settings" type="Button" parent="Juego/Principal"]
+margin_left = 700.0
+margin_top = 700.0
+margin_right = 780.0
+margin_bottom = 780.0
+icon = ExtResource( 9 )
+flat = true
+expand_icon = true
+script = ExtResource( 5 )
+
+[node name="Panel" type="Panel" parent="Juego"]
+margin_right = 800.0
+margin_bottom = 800.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="settings_return" type="Button" parent="Juego/Panel"]
+margin_left = 700.0
+margin_top = 30.0
+margin_right = 780.0
+margin_bottom = 110.0
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+script = ExtResource( 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Juego/Panel"]
+margin_left = 50.0
+margin_top = 120.0
+margin_right = 750.0
+margin_bottom = 770.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Juego/Panel/VBoxContainer"]
+margin_right = 700.0
+margin_bottom = 68.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Juego/Panel/VBoxContainer/HBoxContainer"]
+margin_top = 16.0
+margin_right = 348.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Min Ban Time"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="minBanTime" type="SpinBox" parent="Juego/Panel/VBoxContainer/HBoxContainer"]
+margin_left = 352.0
+margin_right = 700.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+theme = ExtResource( 11 )
+value = 10.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Juego/Panel/VBoxContainer"]
+margin_top = 72.0
+margin_right = 700.0
+margin_bottom = 141.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Juego/Panel/VBoxContainer/HBoxContainer2"]
+margin_top = 17.0
+margin_right = 348.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Ban Time Multiplier"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="banTimeMulti" type="SpinBox" parent="Juego/Panel/VBoxContainer/HBoxContainer2"]
+margin_left = 352.0
+margin_right = 700.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+theme = ExtResource( 11 )
+value = 10.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Juego/Panel/VBoxContainer"]
+margin_top = 145.0
+margin_right = 700.0
+margin_bottom = 213.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Juego/Panel/VBoxContainer/HBoxContainer3"]
+margin_top = 4.0
+margin_right = 348.0
+margin_bottom = 63.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Ban Player with current Number"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="banPlayerWithCurrentNumber" type="CheckBox" parent="Juego/Panel/VBoxContainer/HBoxContainer3"]
+margin_left = 352.0
+margin_right = 700.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Juego/Panel/VBoxContainer"]
+margin_top = 217.0
+margin_right = 700.0
+margin_bottom = 286.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Juego/Panel/VBoxContainer/HBoxContainer4"]
+margin_top = 17.0
+margin_right = 348.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Ban Time"
+align = 1
+valign = 1
+
+[node name="banPlayerWithCurrentNumberTime" type="SpinBox" parent="Juego/Panel/VBoxContainer/HBoxContainer4"]
+margin_left = 352.0
+margin_right = 700.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+theme = ExtResource( 11 )
+value = 20.0
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Juego/Panel/VBoxContainer"]
+margin_top = 290.0
+margin_right = 700.0
+margin_bottom = 359.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Juego/Panel/VBoxContainer/HBoxContainer5"]
+margin_top = 17.0
+margin_right = 348.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "Allow Mods Play"
+align = 1
+valign = 1
+
+[node name="allowModsPlay" type="CheckBox" parent="Juego/Panel/VBoxContainer/HBoxContainer5"]
+margin_left = 352.0
+margin_right = 700.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Juego/Panel/VBoxContainer"]
+margin_top = 363.0
+margin_right = 700.0
+margin_bottom = 431.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Juego/Panel/VBoxContainer/HBoxContainer6"]
+margin_top = 16.0
+margin_right = 348.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Allow Ban Mods"
+align = 1
+valign = 1
+
+[node name="allowBanMods" type="CheckBox" parent="Juego/Panel/VBoxContainer/HBoxContainer6"]
+margin_left = 352.0
+margin_right = 700.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Juego/Panel/VBoxContainer"]
+margin_top = 435.0
+margin_right = 700.0
+margin_bottom = 504.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Juego/Panel/VBoxContainer/HBoxContainer7"]
+margin_top = 17.0
+margin_right = 348.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "VIP on Record"
+align = 1
+valign = 1
+
+[node name="temporalVip" type="CheckBox" parent="Juego/Panel/VBoxContainer/HBoxContainer7"]
+margin_left = 352.0
+margin_right = 700.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Juego/Panel/VBoxContainer"]
+margin_top = 508.0
+margin_right = 700.0
+margin_bottom = 577.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Juego/Panel/VBoxContainer/HBoxContainer8"]
+margin_top = 5.0
+margin_right = 213.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Anonimous Connect"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="anonimousChannel" type="LineEdit" parent="Juego/Panel/VBoxContainer/HBoxContainer8"]
+margin_left = 217.0
+margin_right = 431.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+theme = ExtResource( 11 )
+text = "roynewo"
+clear_button_enabled = true
+
+[node name="Button" type="Button" parent="Juego/Panel/VBoxContainer/HBoxContainer8"]
+margin_left = 435.0
+margin_right = 648.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+icon = ExtResource( 10 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="anonimousConnectionStatus" type="ColorRect" parent="Juego/Panel/VBoxContainer/HBoxContainer8"]
+margin_left = 652.0
+margin_right = 700.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.22
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Juego/Panel/VBoxContainer"]
+margin_top = 581.0
+margin_right = 700.0
+margin_bottom = 650.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Juego/Panel/VBoxContainer/HBoxContainer9"]
+margin_top = 10.0
+margin_right = 321.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 0.796078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Authenticated Connect
+ (Allow Ban and Vip)"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="Juego/Panel/VBoxContainer/HBoxContainer9"]
+margin_left = 325.0
+margin_right = 647.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+icon = ExtResource( 10 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="connectionStatus" type="ColorRect" parent="Juego/Panel/VBoxContainer/HBoxContainer9"]
+margin_left = 651.0
+margin_right = 700.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="Pokemica" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[connection signal="pressed" from="Juego/Panel/VBoxContainer/HBoxContainer8/Button" to="TwitchChat" method="_anon_connection"]
+[connection signal="pressed" from="Juego/Panel/VBoxContainer/HBoxContainer9/Button" to="TwitchChat" method="_authenticate"]
